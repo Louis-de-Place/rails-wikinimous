@@ -1,0 +1,10 @@
+<%= form_with model: @article do |f| %>
+  <div class="d-flex flex-column mb-3">
+    <%= f.label :title, class: "form-label fw-bold" %>
+    <%= f.text_field :title, class: "form-control mb-3" %>
+    <%= f.label :content, class: "form-label fw-bold" %>
+    <%= f.text_area :content, :rows => 20, class: "form-control mb-3" %>
+  </div>
+  <% action = @article.new_record?() ? 'Create' : 'Edit' %>
+  <%= f.submit "#{action} Article", class: "btn btn-primary" %>
+<% end %>

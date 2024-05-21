@@ -1,0 +1,10 @@
+<div class="container w-50 mt-3">
+  <% @articles.reverse.each do |a| %>
+    <article class="mb-3">
+      <h2><%= link_to a.title, article_path(a), class:"article" %></h2>
+      <div class="text-truncate">
+        <%= a.content%>
+      </div>
+    </article>
+  <% end %>
+</div>

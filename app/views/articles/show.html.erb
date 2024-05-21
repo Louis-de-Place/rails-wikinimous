@@ -1,0 +1,17 @@
+<div class="container w-50 mt-3">
+  <article>
+    <div class="d-flex justify-content-between align-items-center">
+      <h1><%= @article.title %></h1>
+      <div>
+        <%= link_to edit_article_path(@article), class: 'btn btn-outline-primary' do %>
+          <i class="fa-regular fa-pen-to-square"></i>
+        <% end %>
+        <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-primary' do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <%= @article.content %>
+  </article>
+</div>
